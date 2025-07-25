@@ -1,19 +1,19 @@
 # ================================ LIBRERÍAS ================================ #
 import streamlit as st
-import pandas as pd
-import numpy as np
 import datetime as dt
 
 
 # ================================ FUNCIONES ================================ #
 def time_to_seconds(t: dt.time) -> int:
-        return t.hour * 3600 + t.minute * 60 + t.second
+    return t.hour * 3600 + t.minute * 60 + t.second
+
 
 def seconds_to_time(s: int) -> dt.time:
     h, rem = divmod(s, 3600)
     m, sec = divmod(rem, 60)
     # Opcional: ajusta por si supera 24 h (h %= 24)
     return dt.time(h % 24, m, sec)
+
 
 def time_input_plus(label: str,
                     start: dt.time = dt.time(0, 0),
@@ -52,17 +52,17 @@ def time_input_plus(label: str,
     # 2) Si default es None, obtiene el valor de start
     if default is None:
         default = start
-    
+
     # 3) Determinar índice inicial
     try:
         idx = rangos_horas.index(default.strftime("%H:%M"))
     except ValueError:
         idx = 0
-    
+
     # 4) Mostrar selectbox con entrada libre
     seleccion_str = st.selectbox(label, options=rangos_horas, index=idx,
                                  key=key+"_time_plus",
-                                 accept_new_options=True, on_change=on_change)
+                                 accept_new_options=False, on_change=on_change)
 
     # 5) Validar y convertir a datetime.time
     try:
@@ -71,4 +71,3 @@ def time_input_plus(label: str,
     except Exception:
         st.error(f"Formato inválido: «{seleccion_str}». Debe ser HH:MM.")
         return None
-
