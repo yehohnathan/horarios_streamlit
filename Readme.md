@@ -36,7 +36,9 @@ Generador de Horarios es una aplicación **interactiva** construida con
 
 | Interfaz principal               | Ajustes en el sidebar            |
 | -------------------------------- | -------------------------------- |
-| ![Main UI](data\Menu1.png) | ![Sidebar](data\Menu2.png) |
+| ![Main UI](<img width="1308" height="676" alt="Menu1" src="https://github.com/user-attachments/assets/fba337fc-0d51-4cf9-9a5c-d30bc0cf12a7" />
+) | ![Sidebar](<img width="1303" height="678" alt="Menu2" src="https://github.com/user-attachments/assets/12d845bc-4023-4492-ad38-819774feb890" />
+) |
 
 ---
 
